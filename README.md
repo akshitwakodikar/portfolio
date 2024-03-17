@@ -7,7 +7,7 @@ Welcome to my personal portfolio! This project showcases my skills, projects, an
 ## Preview
 
 ![Preview 1](ss1.png)
-![Preview 2](ss2.jpeg)
+![Preview 2](ss2.png)
 
 ## Features
 
