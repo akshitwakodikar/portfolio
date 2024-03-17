@@ -15,7 +15,7 @@ Welcome to my personal portfolio! This project showcases my skills, projects, an
 - Interactive components and smooth animations
 - Sections for projects, about me, skills, experience, and contact information
 - Customizable themes and color schemes
-- 
+  
 ## Live Demo
 
 Check out the live demo of this portfolio [here](https://akshit-wakodikar.onrender.com) .
