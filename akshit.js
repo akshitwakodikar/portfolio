@@ -143,3 +143,80 @@ document.getElementById('footer').addEventListener('submit', (event) => {
         'Failed to send the message. Please try again later.';
     });
 });
+
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', (event) => {
+  const menuBtn = document.querySelector('.menu-btn');
+  const navbarMenu = document.querySelector('.navbar-menu');
+  const socialMedia = document.querySelector('.social-media');
+  let menuOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+      if(!menuOpen) {
+          menuBtn.classList.add('open');
+          navbarMenu.classList.add('show');
+          socialMedia.classList.add('show');
+          menuOpen = true;
+      } else {
+          menuBtn.classList.remove('open');
+          navbarMenu.classList.remove('show');
+          socialMedia.classList.remove('show');
+          menuOpen = false;
+      }
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+          menuBtn.classList.remove('open');
+          navbarMenu.classList.remove('show');
+          socialMedia.classList.remove('show');
+          menuOpen = false;
+      });
+  });
+});
+
+
+// Add this at the end of your existing akshit.js file
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const menuBtn = document.querySelector('.menu-btn');
+  const navbarMenu = document.querySelector('.navbar-menu');
+  const socialMedia = document.querySelector('.social-media');
+  let menuOpen = false;
+
+  function toggleMenu() {
+      if(!menuOpen) {
+          menuBtn.classList.add('open');
+          navbarMenu.classList.add('show');
+          socialMedia.classList.add('show');
+          menuOpen = true;
+      } else {
+          menuBtn.classList.remove('open');
+          navbarMenu.classList.remove('show');
+          socialMedia.classList.remove('show');
+          menuOpen = false;
+      }
+  }
+
+  menuBtn.addEventListener('click', toggleMenu);
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+          if (window.innerWidth <= 1204) {  // Only close menu on click for mobile view
+              toggleMenu();
+          }
+      });
+  });
+
+  // Handle resize events
+  window.addEventListener('resize', () => {
+      if (window.innerWidth > 1204) {
+          menuBtn.classList.remove('open');
+          navbarMenu.classList.remove('show');
+          socialMedia.classList.remove('show');
+          menuOpen = false;
+      }
+  });
+});
