@@ -238,7 +238,7 @@ body::selection {
   font-weight: 800;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1204px) {
   #header {
     flex-wrap: wrap;
   }
@@ -290,7 +290,7 @@ body::selection {
 }
 
 /* Styles for larger screens */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1204px) {
   #header {
     display: flex;
     justify-content: space-between;
@@ -418,7 +418,7 @@ body::selection {
   z-index: 2;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1204px) {
   .background-circle,
   .hoodie-guy {
     width: 350px;
@@ -1140,7 +1140,7 @@ body::selection {
 }
 
 /* Responsive styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1204px) {
   #header {
       flex-wrap: wrap;
   }
@@ -1192,7 +1192,7 @@ body::selection {
 }
 
 /* Styles for larger screens */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1204px) {
   .navbar-menu, .social-media {
       display: flex !important;  /* Always show on larger screens */
   }
