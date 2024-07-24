@@ -136,7 +136,7 @@ body::selection {
 .background-circle img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;
 } 
 
 .navbar-title {
@@ -163,6 +163,12 @@ body::selection {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-menu ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-menu li {
@@ -194,6 +200,12 @@ body::selection {
   align-items: center;
 }
 
+.social-media ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 .social-media li {
   display: flex;
   padding: 0 16px;
@@ -205,6 +217,7 @@ body::selection {
   font-size: 14px;
   transition: 0.3s ease;
 }
+
 .social-media li a {
   color: #fefefe;
   text-decoration: none;
@@ -225,6 +238,89 @@ body::selection {
   font-weight: 800;
 }
 
+@media screen and (max-width: 768px) {
+  #header {
+    flex-wrap: wrap;
+  }
+
+  .menu-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(45, 46, 50, 0.95);
+    z-index: 999;
+  }
+
+  .navbar-menu.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-menu li {
+    margin: 20px 0;
+  }
+
+  .social-media {
+    display: none;
+  }
+
+  .social-media.show {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 769px) {
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-menu, .social-media {
+    display: flex !important;  /* Always show on larger screens */
+  }
+  
+  .menu-btn {
+    display: none !important;  /* Hide hamburger on larger screens */
+  }
+
+  .navbar-menu ul {
+    flex-direction: row;
+  }
+
+  .navbar-menu li {
+    margin: 0 15px;
+  }
+
+  .social-media ul {
+    flex-direction: row;
+  }
+
+  .social-media li {
+    margin: 0 10px;
+  }
+}
 /* ---------- SECTION BODY CONTENT ---------- */
 #content-body {
   display: flex;
@@ -867,24 +963,241 @@ body::selection {
 }
 
 
-/* -----Responsiveness-----
 
-@media screen and (max-width: 768px) {
-  .navbar-title {
-    text-align: center;
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  #content-body {
+    flex-direction: column-reverse;
+    padding: 50px 20px;
+    height: auto;
+  }
+
+  .body-part-1 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .body-title {
+    padding: 0;
+  }
+
+  .body-part-2 {
+    margin-bottom: 50px;
+  }
+
+  .background-circle,
+  .hoodie-guy {
+    width: 300px;
+    height: 300px;
+  }
+
+  #introduction {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .cards {
+    width: 100%;
+  }
+
+  .introduction-text {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  #footer {
+    flex-direction: column;
+    padding: 50px 20px;
+    height: auto;
+  }
+
+  .footer-left, .footer-right {
+    width: 100%;
+  }
+
+  .email-form {
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    padding: 20px;
   }
 
   .navbar-menu {
-    text-align: center;
-      padding: 0;
+    margin-top: 20px;
   }
 
   .social-media {
-      text-align: center;
+    margin-top: 20px;
   }
 
-  /* Additional responsive styles as needed */
-  /* ... */
+  .body-title h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
 
-  /* Additional responsive styles as needed */
-  /* ... */
+  .background-circle,
+  .hoodie-guy {
+    width: 250px;
+    height: 250px;
+  }
+
+  .design-card {
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-menu li {
+    padding: 0 10px;
+  }
+
+  .social-media li {
+    padding: 0 8px;
+  }
+
+  .body-title h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .background-circle,
+  .hoodie-guy {
+    width: 200px;
+    height: 200px;
+  }
+
+  .email-form div {
+    flex-direction: column;
+  }
+
+  .email-form div input,
+  .email-form div button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+} */
+
+
+/* Hamburger menu styles */
+.menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-btn__burger {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-10px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(10px);
+}
+
+/* Animation for hamburger to X */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  #header {
+      flex-wrap: wrap;
+  }
+
+  .menu-btn {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+  }
+
+  .navbar-menu {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(45, 46, 50, 0.95);
+      z-index: 999;
+  }
+
+  .navbar-menu.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .navbar-menu ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-menu li {
+      margin: 20px 0;
+  }
+
+  .social-media {
+      display: none;
+  }
+
+  .social-media.show {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+  }
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 769px) {
+  .navbar-menu, .social-media {
+      display: flex !important;  /* Always show on larger screens */
+  }
+  
+  .menu-btn {
+      display: none !important;  /* Hide hamburger on larger screens */
+  }
+}
